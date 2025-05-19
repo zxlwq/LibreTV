@@ -111,6 +111,11 @@ const API_SITES = {
         name: 'lsb资源',
         adult: true
     },
+    Kitt: {
+        api: 'https://zy.xiaomaomi.cc',
+        name: '小猫咪',
+        adult: true
+    },
     huangcang: {
         api: 'https://hsckzy.vip',
         name: '黄色仓库',
