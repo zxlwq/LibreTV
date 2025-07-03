@@ -36,14 +36,14 @@ jobs:
           push: true
 
           # ✅ 需要修改：将 player 改成你的新镜像名称
-          tags: ghcr.io/zxlwq/LibreTV:latest
+          tags: ghcr.io/zxlwq/libretv:latest
 
           # ✅ 需要修改：
           # 1. 替换为你的新仓库地址
           # 2. 修改 description 为你新的镜像描述
           labels: |
-            org.opencontainers.image.source=https://github.com/zxlwq/LibreTV
-            org.opencontainers.image.description=LibreTV Docker Image
+            org.opencontainers.image.source=https://github.com/zxlwq/libretv
+            org.opencontainers.image.description=libretv Docker Image
             org.opencontainers.image.licenses=MIT
 
           # 可选缓存优化，一般不需要改
