@@ -1,56 +1,51 @@
-name: Build LibreTV image
+name: Build and Push Docker Image
 
 on:
-  workflow_run:
-    workflows: ["Bump version"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
   build:
-    name: Build LibreTV image
     runs-on: ubuntu-latest
-    if: (github.event.workflow_run.conclusion == 'success' && github.repository == 'LibreSpark/LibreTV') || (github.repository == 'bestZwei/libretv')
+    permissions:
+      contents: read
+      packages: write
 
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Read version from VERSION.txt
-        id: version
-        run: |
-          VERSION=$(cat VERSION.txt)
-          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-          
-      - name: Set Docker image tag based on repository
-        id: set-tag
-        run: |
-          if [ "${{ github.repository }}" = "LibreSpark/LibreTV" ]; then
-            echo "IMAGE_NAME=libretv" >> $GITHUB_OUTPUT
-            echo "TAGS=${{ secrets.DOCKER_USERNAME }}/libretv:latest,${{ secrets.DOCKER_USERNAME }}/libretv:${{ steps.version.outputs.VERSION }}" >> $GITHUB_OUTPUT
-          else
-            echo "IMAGE_NAME=libretv-beta" >> $GITHUB_OUTPUT
-            echo "TAGS=${{ secrets.DOCKER_USERNAME }}/libretv-beta:latest" >> $GITHUB_OUTPUT
-          fi
 
-      - name: Set up Docker QEMU
-        uses: docker/setup-qemu-action@v3
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v3
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build and push LibreTV image
-        uses: docker/build-push-action@v6.14.0
-        with:
+          # 👉 如果 Dockerfile 不在根目录，请修改此处为实际路径，例如 ./docker
           context: .
-          file: Dockerfile
+
           push: true
-          tags: ${{ steps.set-tag.outputs.TAGS }}
-          platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
+
+          # ✅ 需要修改：将 player 改成你的新镜像名称
+          tags: ghcr.io/zxlwq/LibreTV:latest
+
+          # ✅ 需要修改：
+          # 1. 替换为你的新仓库地址
+          # 2. 修改 description 为你新的镜像描述
+          labels: |
+            org.opencontainers.image.source=https://github.com/zxlwq/LibreTV
+            org.opencontainers.image.description=LibreTV Docker Image
+            org.opencontainers.image.licenses=MIT
+
+          # 可选缓存优化，一般不需要改
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
