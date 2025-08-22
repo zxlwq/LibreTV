@@ -22,10 +22,11 @@ const SITE_CONFIG = {
 
 // API站点配置
 const API_SITES = {
-    testSource: {
-        api: 'https://www.example.com/api.php/provide/vod',
-        name: '空内容测试源',
-        adult: true
+     api_1: { 
+         name: `TV-1080资源`, 
+         api: `https://api.1080zyku.com/inc/api_mac10.php`, 
+         detail: `https://api.1080zyku.com`,
+         adult: true
     }
     //ARCHIVE https://telegra.ph/APIs-08-12
 };
