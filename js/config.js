@@ -23,107 +23,107 @@ const SITE_CONFIG = {
 // API站点配置
 const API_SITES = {
         api_52: {  
-            name:`AV-91麻豆`,  
+            name:`91麻豆`,  
             api:`https://91md.me/api.php/provide/vod`,  
             detail:`https://91md.me`,  
         },
         api_53: {  
-            name:`AV-AIvin`,  
+            name:`AIvin`,  
             api:`http://lbapiby.com/api.php/provide/vod`,  
             detail:``,  
         },
         api_54: {  
-            name:`AV-JKUN资源`,  
+            name:`JKUN资源`,  
             api:`https://jkunzyapi.com/api.php/provide/vod`,  
             detail:`https://jkunzyapi.com`,  
         },
         api_55: {  
-            name:`AV-souav资源`,  
+            name:`souav资源`,  
             api:`https://api.souavzy.vip/api.php/provide/vod`,  
             detail:`https://api.souavzy.vip`,  
         },
         api_56: {  
-            name:`AV-乐播资源`,  
+            name:`乐播资源`,  
             api:`https://lbapi9.com/api.php/provide/vod`,  
             detail:``,  
         },
         api_57: {  
-            name:`AV-奥斯卡资源`,  
+            name:`奥斯卡资源`,  
             api:`https://aosikazy.com/api.php/provide/vod`,  
             detail:`https://aosikazy.com`,  
         },
         api_58: {  
-            name:`AV-奶香香`,  
+            name:`奶香香`,  
             api:`https://Naixxzy.com/api.php/provide/vod`,  
             detail:`https://Naixxzy.com`,  
         },
         api_59: {  
-            name:`AV-森林资源`,  
+            name:`森林资源`,  
             api:`https://slapibf.com/api.php/provide/vod`,  
             detail:`https://slapibf.com`,  
         },
         api_60: {  
-            name:`AV-淫水机资源`,  
+            name:`淫水机资源`,  
             api:`https://www.xrbsp.com/api/json.php`,  
             detail:`https://www.xrbsp.com`,  
         },
         api_61: {  
-            name:`AV-玉兔资源`,  
+            name:`玉兔资源`,  
             api:`https://apiyutu.com/api.php/provide/vod`,  
             detail:`https://apiyutu.com`,  
         },
         api_62: {  
-            name:`AV-番号资源`,  
+            name:`番号资源`,  
             api:`http://fhapi9.com/api.php/provide/vod`,  
             detail:``,  
         },
         api_63: {  
-            name:`AV-白嫖资源`,  
+            name:`白嫖资源`,  
             api:`https://www.kxgav.com/api/json.php`,  
             detail:`https://www.kxgav.com`,  
         },
         api_64: {  
-            name:`AV-精品资源`,  
+            name:`精品资源`,  
             api:`https://www.jingpinx.com/api.php/provide/vod`,  
             detail:`https://www.jingpinx.com`,  
         },
         api_65: {  
-            name:`AV-美少女资源`,  
+            name:`美少女资源`,  
             api:`https://www.msnii.com/api/json.php`,  
             detail:`https://www.msnii.com`,  
         },
         api_66: {  
-            name:`AV-老色逼资源`,  
+            name:`老色逼资源`,  
             api:`https://apilsbzy1.com/api.php/provide/vod`,  
             detail:`https://apilsbzy1.com`,  
         },
         api_67: {  
-            name:`AV-色南国`,  
+            name:`色南国`,  
             api:`https://api.sexnguon.com/api.php/provide/vod`,  
             detail:`https://api.sexnguon.com`,  
         },
         api_68: {  
-            name:`AV-色猫资源`,  
+            name:`色猫资源`,  
             api:`https://api.maozyapi.com/inc/apijson_vod.php`,  
             detail:`https://api.maozyapi.com`,  
         },
         api_69: {  
-            name:`AV-辣椒资源`,  
+            name:`辣椒资源`,  
             api:`https://apilj.com/api.php/provide/vod`,  
             detail:`https://apilj.com`,  
         },
         api_70: {  
-            name:`AV-香奶儿资源`,  
+            name:`香奶儿资源`,  
             api:`https://www.gdlsp.com/api/json.php`,  
             detail:`https://www.gdlsp.com`,  
         },
         api_71: {  
-            name:`AV-鲨鱼资源`,  
+            name:`鲨鱼资源`,  
             api:`https://shayuapi.com/api.php/provide/vod`,  
             detail:`https://shayuapi.com`,  
         },
         api_72: {  
-            name:`AV-黄AV资源`,  
+            name:`黄AV资源`,  
             api:`https://www.pgxdy.com/api/json.php`,  
             detail:`https://www.pgxdy.com`,  
             adult: true
